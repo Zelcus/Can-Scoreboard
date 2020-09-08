@@ -1,25 +1,78 @@
 import React, { useState, useEffect } from "react";
 
 const CanOpener = () => {
-    const Participants = [
-        { id: 0, name: "Red" },
-        { id: 1, name: "Blue" },
-        { id: 2, name: "Rue" },
-    ];
+    const [userValue, setUserValue] = useState("");
+
     const [users, setUsers] = useState([]);
 
-    useEffect(() => {
-        setUsers(Participants);
-    }, []);
+    const handleChange = (e) => {
+        setUserValue(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const user = {
+            value: userValue,
+            points: 0,
+        };
+
+        if (!userValue) return;
+        setUsers([...users, user]);
+        document.getElementById("userValue").value = "";
+        document.getElementById("userValue").points = 0;
+    };
+    const handlePoints = (e) => {
+        const { id } = e.target.parentElement;
+        users[id].points = users[id].points + 1;
+        setUsers([...users]);
+    };
+    const handleDelete = (e) => {
+        const { id } = e.target.parentElement;
+        users.splice(id, 1);
+        setUsers([...users]);
+    };
+
     return (
-        <div>
-            <ul>
-                {users.map((value, index) => (
-                    <li key={value.id}>{value.name}</li>
-                ))}
-            </ul>
+        <div class="form-container">
+            <form class="can-form" onSubmit={handleSubmit}>
+                <label class="user-label">Name on participant</label>
+                <span class="user-input">
+                    <input
+                        class="submit-text"
+                        type="text"
+                        id="userValue"
+                        onChange={handleChange}
+                    ></input>
+                    <input
+                        class="submit-button"
+                        type="submit"
+                        value="ADD"
+                    ></input>
+                </span>
+            </form>
+            <div class="users">
+                {users &&
+                    users.map((user, i) => (
+                        <div className="user-block" key={user.value} id={i}>
+                            {user.value}
+                            <div>{user.points}</div>
+                            <button
+                                className="btn add-point"
+                                onClick={handlePoints}
+                            >
+                                +
+                            </button>
+                            <button
+                                className="btn delete-user"
+                                onClick={handleDelete}
+                            >
+                                x
+                            </button>
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 };
 export default CanOpener;
-// {const userList = users.map((user) => <li key={user}>{user}</li>}
