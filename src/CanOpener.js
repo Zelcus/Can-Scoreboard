@@ -22,9 +22,17 @@ const CanOpener = () => {
         document.getElementById("userValue").value = "";
         document.getElementById("userValue").points = 0;
     };
-    const handlePoints = (e) => {
+    const incrementPoints = (e) => {
         const { id } = e.target.parentElement;
         users[id].points = users[id].points + 1;
+        setUsers([...users]);
+    };
+    const decrementPoints = (e) => {
+        const { id } = e.target.parentElement;
+        let tempPoints = users[id].points;
+        if (tempPoints > 0) {
+            users[id].points = users[id].points - 1;
+        }
         setUsers([...users]);
     };
     const handleDelete = (e) => {
@@ -59,9 +67,15 @@ const CanOpener = () => {
                             <div>{user.points}</div>
                             <button
                                 className="btn add-point"
-                                onClick={handlePoints}
+                                onClick={incrementPoints}
                             >
                                 +
+                            </button>
+                            <button
+                                className="btn delete-point"
+                                onClick={decrementPoints}
+                            >
+                                -
                             </button>
                             <button
                                 className="btn delete-user"
