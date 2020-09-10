@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
-import CanOpener from "./CanOpener";
-import SignUp from "./signUpForm";
+import DaysToSpooktober from "./daysToSpooktober";
+import ScoreBoard from "./scoreBoard";
 
 function App() {
     return (
@@ -16,8 +15,9 @@ function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                 ></a>
-                {daysToSpooktober()}
-                {CanOpener()}
+                {DaysToSpooktober()}
+                <h2>Coca Cola Counter Dashboard</h2>
+                {ScoreBoard()}
             </header>
         </div>
     );

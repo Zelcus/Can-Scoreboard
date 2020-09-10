@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import data from "./user-list.json";
-const CanOpener = () => {
+const ScoreBoard = () => {
     const [userValue, setUserValue] = useState("");
 
     const [users, setUsers] = useState([]);
@@ -94,4 +94,4 @@ const CanOpener = () => {
         </div>
     );
 };
-export default CanOpener;
+export default ScoreBoard;

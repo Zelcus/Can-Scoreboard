@@ -112,3 +112,7 @@ code {
     outline: none;
     background: #2c7c68;
 }
+.spooktober-container {
+    margin-bottom: 100px;
+    color: orange;
+}
