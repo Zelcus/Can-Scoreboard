@@ -6,19 +6,15 @@ import ScoreBoard from "./scoreBoard";
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
+        <div className="dashboard">
+            <header className="dashboard-header"> </header>
+            <div className="dashboard-body">
                 <p></p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                ></a>
+
                 {DaysToSpooktober()}
                 <h2>Coca Cola Counter Dashboard</h2>
                 {ScoreBoard()}
-            </header>
+            </div>
         </div>
     );
 }

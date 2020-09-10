@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./index.scss";
+import "./dashboard.scss";
 
 function DaysToSpooktober() {
     const calculateTimeLeft = () => {
