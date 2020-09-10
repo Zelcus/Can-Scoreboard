@@ -6,12 +6,6 @@ import CanOpener from "./CanOpener";
 import SignUp from "./signUpForm";
 
 function App() {
-    const [users, setUsers] = useState([
-        {
-            nickName: "",
-            points: 0,
-        },
-    ]);
     return (
         <div className="App">
             <header className="App-header">
@@ -22,6 +16,7 @@ function App() {
                     target="_blank"
                     rel="noopener noreferrer"
                 ></a>
+                {daysToSpooktober()}
                 {CanOpener()}
             </header>
         </div>

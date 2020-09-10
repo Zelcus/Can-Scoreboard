@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import data from "./user-list.json";
 const CanOpener = () => {
     const [userValue, setUserValue] = useState("");
 
@@ -17,27 +17,32 @@ const CanOpener = () => {
             points: 0,
         };
 
+        //If textfield is empty
         if (!userValue) return;
         setUsers([...users, user]);
+        data.push(user);
+
+        //Reset the input fields
         document.getElementById("userValue").value = "";
         document.getElementById("userValue").points = 0;
+        console.log("data", data);
     };
     const incrementPoints = (e) => {
         const { id } = e.target.parentElement;
-        users[id].points = users[id].points + 1;
+        data[id].points = data[id].points + 1;
         setUsers([...users]);
     };
     const decrementPoints = (e) => {
         const { id } = e.target.parentElement;
-        let tempPoints = users[id].points;
+        let tempPoints = data[id].points;
         if (tempPoints > 0) {
-            users[id].points = users[id].points - 1;
+            data[id].points = data[id].points - 1;
         }
         setUsers([...users]);
     };
     const handleDelete = (e) => {
         const { id } = e.target.parentElement;
-        users.splice(id, 1);
+        data.splice(id, 1);
         setUsers([...users]);
     };
 
@@ -60,8 +65,8 @@ const CanOpener = () => {
                 </span>
             </form>
             <div class="users">
-                {users &&
-                    users.map((user, i) => (
+                {data &&
+                    data.map((user, i) => (
                         <div className="user-block" key={user.value} id={i}>
                             {user.value}
                             <div>{user.points}</div>
