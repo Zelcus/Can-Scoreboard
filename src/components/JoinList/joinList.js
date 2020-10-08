@@ -48,17 +48,16 @@ function JoinList(props) {
     return (
         <div>
             <header>
-                <h1>Welcome to the User List app!</h1>
+                <h1>Welcome to the Scoreboard section of the Dashboard app!</h1>
             </header>
             <div className="join-container">
                 <div>
                     <form name="addUserToListForm">
-                        <p>
-                            Select your name if you previously joined the
-                            list...
-                        </p>
+                        <p>Select the name of scoreboard you want to open...</p>
                         {getUserButtonList()}
-                        <p>...or enter your name to join the list...</p>
+                        <p>
+                            ...or enter a new name to create a new Scoreboard...
+                        </p>
                         <p>
                             <input type="text" name="name" />
                             <button onClick={addNewUser}>Join</button>
@@ -67,7 +66,7 @@ function JoinList(props) {
                         <p>
                             ...or{" "}
                             <a href="/" onClick={onCreateListClick}>
-                                create a new list
+                                create a new Scoreboard
                             </a>
                         </p>
                     </form>

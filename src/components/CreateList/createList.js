@@ -27,13 +27,13 @@ function CreateList(props) {
     return (
         <div>
             <header>
-                <h1>Welcome to the User List app!</h1>
+                <h1>Welcome to the Scoreboard section of the Dashboard app!</h1>
             </header>
             <div className="create-container">
                 <div>
                     <form name="createListForm">
                         <p>
-                            <label>What is your name?</label>
+                            <label>What is your Scoreboard's name?</label>
                         </p>
                         <p>
                             <input type="text" name="userName" />
@@ -41,7 +41,7 @@ function CreateList(props) {
                         <ErrorMessage errorCode={error}></ErrorMessage>
                         <p>
                             <button onClick={createUserList}>
-                                Create a new list
+                                Create a new Scoreboard
                             </button>
                         </p>
                     </form>
