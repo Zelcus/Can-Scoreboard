@@ -14,7 +14,7 @@ const config = {
 firebase.initializeApp(config);
 const db = firebase.firestore();
 
-// *** Auth API ***
+// *** Auth API  ***
 
 export const authenticateAnonymously = () => {
     return firebase.auth().signInAnonymously();
