@@ -24,7 +24,10 @@ function ItemList(props) {
     }, [userListId, setUserItems]);
 
     const userItemElements = userItems.map((userItem, i) => (
-        <div key={i}>{userItem.name}</div>
+        <div key={i}>
+            <p>{userItem.name}</p>
+            <p>{userItem.point}</p>
+        </div>
     ));
 
     return (

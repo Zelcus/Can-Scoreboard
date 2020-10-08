@@ -67,7 +67,7 @@ function JoinList(props) {
                         <p>
                             ...or{" "}
                             <a href="/" onClick={onCreateListClick}>
-                                create a new user list
+                                create a new list
                             </a>
                         </p>
                     </form>

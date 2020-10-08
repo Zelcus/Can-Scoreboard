@@ -16,7 +16,6 @@ function AddItem(props) {
             setError("user-item-desc-req");
             return;
         }
-
         FirestoreService.addUserListItem(itemDesc, userListId, userId)
             .then(() => document.addItemForm.reset())
             .catch((reason) => {

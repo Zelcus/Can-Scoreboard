@@ -4,7 +4,7 @@ import * as FirestoreService from "../Services/firestore";
 import ErrorMessage from "../ErrorMessage/errorMessage";
 
 function CreateList(props) {
-    const { onCreate } = props;
+    const { onCreate, userId } = props;
 
     const [error, setError] = useState();
 
@@ -18,11 +18,10 @@ function CreateList(props) {
             return;
         }
 
-        FirestoreService.createUserList(userName)
-            .then((docRef) => {
-                onCreate(docRef.id, userName);
-            })
-            .catch((reason) => setError("create-list-error"));
+        FirestoreService.createUserList(userName, userId).then((docRef) => {
+            onCreate(docRef.id, userName);
+        });
+        // .catch((reason) => setError("create-list-error"));
     }
 
     return (
@@ -42,7 +41,7 @@ function CreateList(props) {
                         <ErrorMessage errorCode={error}></ErrorMessage>
                         <p>
                             <button onClick={createUserList}>
-                                Create a new user list
+                                Create a new list
                             </button>
                         </p>
                     </form>

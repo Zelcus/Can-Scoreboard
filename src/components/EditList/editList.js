@@ -14,9 +14,9 @@ function EditList(props) {
     return (
         <div>
             <header className="app-header">
-                <h1>Live User List</h1>
+                <h1>Live {user}</h1>
                 <p>
-                    <strong>Hi {user}!</strong>
+                    <strong>Hi!</strong>
                 </p>
                 <p>
                     Add items to the list. When someone else adds an item it
@@ -33,17 +33,8 @@ function EditList(props) {
             </div>
             <footer className="app-footer">
                 <p>
-                    Share your list with others using{" "}
-                    <a
-                        href={`/?listId=${userListId}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        this link
-                    </a>{" "}
-                    or{" "}
                     <a href="/" onClick={onCreateListClick}>
-                        create a new user list
+                        create a new list
                     </a>
                     .
                 </p>

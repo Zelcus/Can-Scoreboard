@@ -75,6 +75,7 @@ export const addUserListItem = (item, userListId, userId) => {
                     .collection("items")
                     .add({
                         name: item,
+                        point: 0,
                         created: firebase.firestore.FieldValue.serverTimestamp(),
                     });
             }
