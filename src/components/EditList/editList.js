@@ -33,8 +33,12 @@ function EditList(props) {
             </div>
             <footer className="app-footer">
                 <p>
-                    <a href="/" onClick={onCreateListClick}>
-                        create a new list
+                    <a
+                        href="/"
+                        onClick={onCreateListClick}
+                        className="new-scoreboard-link"
+                    >
+                        create a new Scoreboard
                     </a>
                     .
                 </p>

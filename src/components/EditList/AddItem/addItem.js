@@ -28,14 +28,22 @@ function AddItem(props) {
     }
 
     return (
-        <form name="addItemForm">
-            <h3>I want...</h3>
-            <input type="text" name="itemDesc" />
-            <button type="submit" onClick={addItem}>
-                Add
-            </button>
-            <ErrorMessage errorCode={error}></ErrorMessage>
-        </form>
+        <div className="form-container">
+            <form className="wrapper-form" name="addItemForm">
+                <h3 className="sub-header form-sub-header">Add User...</h3>
+                <div className="form-input-group">
+                    <input className="form-input" type="text" name="itemDesc" />
+                    <button
+                        className="form-button"
+                        type="submit"
+                        onClick={addItem}
+                    >
+                        Add
+                    </button>
+                </div>
+                <ErrorMessage errorCode={error}></ErrorMessage>
+            </form>
+        </div>
     );
 }
 

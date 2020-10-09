@@ -48,29 +48,33 @@ function JoinList(props) {
     return (
         <div>
             <header>
-                <h1>Welcome to the Scoreboard section of the Dashboard app!</h1>
+                <h1>Welcome</h1>
             </header>
-            <div className="join-container">
-                <div>
-                    <form name="addUserToListForm">
-                        <p>Select the name of scoreboard you want to open...</p>
-                        {getUserButtonList()}
-                        <p>
-                            ...or enter a new name to create a new Scoreboard...
-                        </p>
-                        <p>
-                            <input type="text" name="name" />
-                            <button onClick={addNewUser}>Join</button>
-                        </p>
-                        <ErrorMessage errorCode={error}></ErrorMessage>
-                        <p>
-                            ...or{" "}
-                            <a href="/" onClick={onCreateListClick}>
-                                create a new Scoreboard
-                            </a>
-                        </p>
-                    </form>
-                </div>
+            <div className="form-container">
+                <form className="wrapper-form" name="addUserToListForm">
+                    <h3 className="sub-header form-sub-header">
+                        Select the name of scoreboard you want to open...
+                    </h3>
+                    {getUserButtonList()}
+                    <p>...or enter a new name to create a new Scoreboard...</p>
+                    <div className="form-input-group">
+                        <input className="form-input" type="text" name="name" />
+                        <button className="form-button" onClick={addNewUser}>
+                            Join
+                        </button>
+                    </div>
+                    <ErrorMessage errorCode={error}></ErrorMessage>
+                    <p>
+                        ...or{" "}
+                        <a
+                            href="/"
+                            onClick={onCreateListClick}
+                            className="new-scoreboard-link"
+                        >
+                            create a new Scoreboard
+                        </a>
+                    </p>
+                </form>
             </div>
         </div>
     );

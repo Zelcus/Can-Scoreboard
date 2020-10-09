@@ -27,7 +27,7 @@ function CreateList(props) {
     return (
         <div>
             <header>
-                <h1>Welcome to the Scoreboard section of the Dashboard app!</h1>
+                <h1>Welcome</h1>
             </header>
             <div className="create-container">
                 <div>

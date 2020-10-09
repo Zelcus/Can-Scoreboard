@@ -13,6 +13,8 @@ const config = {
 
 firebase.initializeApp(config);
 const db = firebase.firestore();
+const increment = firebase.firestore.FieldValue.increment(1);
+const decrement = firebase.firestore.FieldValue.increment(-1);
 
 // *** Auth API   ***
 
