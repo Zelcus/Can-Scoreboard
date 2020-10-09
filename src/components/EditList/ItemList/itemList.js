@@ -6,6 +6,7 @@ function ItemList(props) {
     const { userListId } = props;
 
     const [userItems, setUserItems] = useState([]);
+
     const [error, setError] = useState();
 
     // Use an effect hook to subscribe to the user list item stream and
@@ -23,17 +24,28 @@ function ItemList(props) {
         return unsubscribe;
     }, [userListId, setUserItems]);
 
+    const incrementPoints = (i) => {
+        userItems[i].point = userItems[i].point + 1;
+        setUserItems([...userItems]);
+    };
+
     const userItemElements = userItems.map((userItem, i) => (
-        <div key={i}>
-            <p>{userItem.name}</p>
-            <p>{userItem.point}</p>
+        <div
+            className="participant-card"
+            key={i}
+            onClick={() => incrementPoints(i)}
+        >
+            <div>
+                <p className="participant-name">{userItem.name}</p>
+                <p className="participant-point">{userItem.point}</p>
+            </div>
         </div>
     ));
 
     return (
         <div>
             <ErrorMessage errorCode={error}></ErrorMessage>
-            <div>{userItemElements}</div>
+            <div className="participant-card-container">{userItemElements}</div>
         </div>
     );
 }
