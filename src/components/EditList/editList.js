@@ -13,16 +13,15 @@ function EditList(props) {
 
     return (
         <div>
-            <header className="app-header">
-                <h1>Live {user}</h1>
-                <p>
-                    <strong>Hi!</strong>
-                </p>
-                <p>
-                    Add items to the list. When someone else adds an item it
-                    will instantly appear on the list.
-                </p>
-            </header>
+            <h1>{user}</h1>
+            <p>
+                <strong>Hello!</strong>
+            </p>
+            <p>
+                Add items to the list. When someone else adds an item it will
+                instantly appear on the list.
+            </p>
+
             <div className="edit-container">
                 <div className="add-item-column">
                     <AddItem {...{ userListId, userId }}></AddItem>

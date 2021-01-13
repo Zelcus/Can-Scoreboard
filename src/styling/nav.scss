@@ -1,0 +1,28 @@
+.nav-header {
+    position: fixed;
+    top: 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+
+    .nav-list-container {
+        display: flex;
+        position: relative;
+        list-style: none;
+        align-items: center;
+        justify-content: space-evenly;
+        li {
+            cursor: pointer;
+            border-bottom: 4px solid transparent;
+            background: transparent;
+            transition: color 0.2s ease-in;
+            transition: background-color 0.2s ease-in;
+            padding: 12px;
+
+            &:hover {
+                color: #b490ca;
+                background: white;
+            }
+        }
+    }
+}

@@ -1,10 +1,19 @@
-import React, { useEffect, useState } from "react";
-
-import * as FirestoreService from "./components/Services/firestore";
+import React, { useEffect, useState, useReducer } from "react";
+import { Context, initialState, reducer } from "./components/Store/Store";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./styling/App.scss";
 
-import CreateList from "./components/CreateList/createList";
+import * as FirestoreService from "./components/Services/firestore";
+import Navigation from "./components/Navigation/navigation";
+
+import HomePage from "./components/Pages/HomePage";
+import NewListPage from "./components/Pages/NewListPage";
+import OverviewPage from "./components/Pages/OverviewPage";
+
+import * as ROUTES from "./components/Constants/routes";
+import CreateList from "./components/CreateList/index";
+import Store from "./components/Store/Store";
 import JoinList from "./components/JoinList/joinList";
 import EditList from "./components/EditList/editList";
 import ErrorMessage from "./components/ErrorMessage/errorMessage";
@@ -54,7 +63,16 @@ function App() {
             .catch(() => setError("user-list-get-fail"));
     }
     // render a component based on the current state
-
+    return (
+        <Store>
+            <Router>
+                <Navigation />
+                <Route exact path="/" component={HomePage} />
+                <Route path="/new-list" component={NewListPage} />
+                <Route path="/overview" component={OverviewPage} />
+            </Router>
+        </Store>
+    );
     if (userList && user) {
         return (
             <EditList

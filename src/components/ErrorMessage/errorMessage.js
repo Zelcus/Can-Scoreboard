@@ -22,7 +22,7 @@ function ErrorMessage(props) {
             case "duplicate-item-error":
                 return "user item on list already";
             case "user-name-required":
-                return "your name is required";
+                return "Your scoreboard name is required";
             case "user-list-item-get-fail":
                 return "failed to get user list items";
             default:
