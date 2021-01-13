@@ -47,9 +47,6 @@ function JoinList(props) {
 
     return (
         <div>
-            <header>
-                <h1>Welcome</h1>
-            </header>
             <div className="form-container">
                 <form className="wrapper-form" name="addUserToListForm">
                     <h3 className="sub-header form-sub-header">
